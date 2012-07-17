@@ -19,6 +19,8 @@
     </style>
 	<link href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="static/css/style.css" type="text/css" >
+    <link rel="stylesheet" href="static/css/reset.css" type="text/css" >
+    <link rel="stylesheet" href="static/css/stylewb.css" type="text/css" >
 <?php if( isset($css) && is_array( $css ) ): ?>
         <?php foreach( $css as $cfile ): ?><link rel="stylesheet" type="text/css" href="static/css/<?=$cfile?>">
         <?php endforeach; ?>
@@ -36,27 +38,19 @@
  
     <div class="container">
       <div class="row-fluid">
-        <div class="span3">
-            <?php	
-			$tfile = 'view' . DS . 'layout' . DS  . g('layout') . DS . 'side' . DS . g('c') . DS . g('a') . '.tpl.html';
-			if( file_exists( AROOT . $tfile ) ) include( AROOT . $tfile );
-			else @include( CROOT . $tfile );
-			 ?>
-        </div><!--/span-->
-        <div class="span9">
+
           <?php 
 			$tfile = 'view' . DS . 'layout' . DS  . g('layout') . DS . 'main' . DS . g('c') . DS . g('a') . '.tpl.html';
 			if( file_exists( AROOT . $tfile ) ) include( AROOT . $tfile );
 			else @include( CROOT . $tfile );
 			?>
-        </div><!--/span-->
+
       </div><!--/row-->
 
      <?php @include_once( dirname(__FILE__) ) . DS . 'footer.tpl.html'; ?>
      
     </div><!--/.fluid-container-->
     
-    <script src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
     <script src="static/script/bootstrap.min.js"></script>
     <!--[if IE 6]>    
     		 <script src="static/script/ie6.min.js"></script>

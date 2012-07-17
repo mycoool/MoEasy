@@ -11,7 +11,9 @@ class defaultController extends appController
 	
 	function index()
 	{
-		$data['title'] = $data['top_title'] = '首页';
+		$list = get_data("SELECT * FROM weibo WHERE 1;");
+        $data['title'] = $data['top_title'] = '首页';
+        $data['list'] = $list;
 		render( $data );
 	}
 	
